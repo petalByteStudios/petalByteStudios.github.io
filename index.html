@@ -1,151 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PetalByte</title>
     <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=android" />
+</head>
+
+<body>
 
     <!-- ═══════════════════ HERO / TITLE ═══════════════════ -->
     <header class="hero">
-      <div class="hero__inner">
-        <div class="hero__logo">🌸</div>
-        <h1 class="hero__title">PetalByte</h1>
-        <p class="hero__tagline">A short, punchy tagline that describes your app in one line.</p>
-        <div class="hero__badges">
-          <span class="badge">iOS</span>
-          <span class="badge">Swift</span>
-          <span class="badge">SwiftUI</span>
+        <div class="hero__inner">
+            <img class="hero__logo" src="assets/images/logo.png" alt="BetweenUs Logo" />
+
+            <h1 class="hero__title">BetweenUs</h1>
+            <p class="hero__tagline"> Laugh, grow, and share — just between us</p>
+            <div class="hero__badges">
+                <span class="badge">Android Studio App <span class="material-symbols-outlined">
+                        android
+                    </span>
+                </span>
+            </div>
         </div>
-      </div>
     </header>
 
     <main>
 
-      <!-- ═══════════════════ CAROUSEL ═══════════════════ -->
-      <section class="section carousel-section" id="gallery">
-        <h2 class="section__title">Gallery</h2>
-        <div class="carousel" role="region" aria-label="App screenshots and videos">
+        <!-- ═══════════════════ CAROUSEL ═══════════════════ -->
+        <section class="section carousel-section" id="gallery">
+            <h2 class="section__title">Gallery</h2>
+            <div class="carousel" role="region" aria-label="App screenshots and videos">
 
-          <!-- Slides — replace src values with your own files -->
-          <div class="carousel__track" id="carouselTrack">
+                <!-- Slides — replace src values with your own files -->
+                <div class="carousel__track" id="carouselTrack">
 
-            <div class="carousel__slide">
-              <img src="assets/images/screenshot-1.png" alt="Screenshot 1" />
+                    <div class="carousel__slide">
+                        <img src="assets/images/s1.png" alt="Screenshot 1" />
+                    </div>
+
+                    <div class="carousel__slide">
+                        <img src="assets/images/s2.png" alt="Screenshot 2" />
+                    </div>
+
+                    <div class="carousel__slide">
+                        <img src="assets/images/s3.png" alt="Screenshot 3" />
+                    </div>
+                    <div class="carousel__slide">
+                        <img src="assets/images/s4.png" alt="Screenshot 4" />
+                    </div>
+                    <div class="carousel__slide">
+                        <img src="assets/images/s5.png" alt="Screenshot 5" />
+                    </div>
+                    <div class="carousel__slide">
+                        <img src="assets/images/s6.png" alt="Screenshot 6" />
+                    </div>
+                    <div class="carousel__slide">
+                        <img src="assets/images/s7.png" alt="Screenshot 7" />
+                    </div>
+                    <div class="carousel__slide">
+                        <img src="assets/images/s8.png" alt="Screenshot 8" />
+                    </div>
+
+                    <div class="carousel__slide">
+                        <!-- Example video slide -->
+                        <video controls preload="none" poster="assets/images/video-poster.png">
+                            <source src="assets/videos/demo.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                </div><!-- /.carousel__track -->
+
+                <button class="carousel__btn carousel__btn--prev" id="prevBtn"
+                    aria-label="Previous slide">&#8592;</button>
+                <button class="carousel__btn carousel__btn--next" id="nextBtn" aria-label="Next slide">&#8594;</button>
+
+                <div class="carousel__dots" id="carouselDots"></div>
+
+            </div>
+        </section>
+
+        <!-- ═══════════════════ APP DESCRIPTION ═══════════════════ -->
+        <section class="section" id="about">
+            <h2 class="section__title">About the App</h2>
+            <div class="about__content">
+                <p>
+                    <strong>BetweenUs</strong> is a social accountability and wellness app designed to help users build
+                    healthier habits
+                    while staying connected with the people who matter most. It offers a private, intentional space
+                    where friends can share their personal growth, track mental well-being, and support one another in
+                    meaningful ways.
+                </p>
+                <p>
+                    Users can express themselves through customizable avatars that reflect daily moods, organize tasks
+                    across daily, weekly, and monthly goals, and creatively document life through a personal doodle
+                    dashboard. <strong>BetweenUs</strong> also includes “memories,” private Instagram-style posts shared
+                    only with close
+                    friends, along with built-in messaging for seamless communication.
+                </p>
+
+                <p>
+                    With optional premium features like a customizable Pomodoro timer, BetweenUs turns productivity into
+                    a more calming and personalized experience. At its core, the app is about real connection,
+                    self-growth, and staying accountable—quietly, and just between us.
+                </p>
+
+            </div>
+        </section>
+
+
+
+        <!-- ═══════════════════ FEATURES ═══════════════════ -->
+        <section class="section features-section" id="features">
+            <h2 class="section__title">Features</h2>
+            <ul class="features__list">
+                <li class="feature-card">
+                    <span class="feature-card__icon">✦</span>
+                    <div>
+                        <h3 class="feature-card__title">Mood Avatars</h3>
+                        <p class="feature-card__desc">Users have customizable avatars that change based on their daily
+                            mood, helping them visually track and reflect their emotional well-being.</p>
+                    </div>
+                </li>
+                <li class="feature-card">
+                    <span class="feature-card__icon">✦</span>
+                    <div>
+                        <h3 class="feature-card__title">Task Management</h3>
+                        <p class="feature-card__desc">Users can organize tasks across daily, weekly, and monthly goals,
+                            helping them stay on top of their responsibilities and maintain a balanced lifestyle.</p>
+                    </div>
+                </li>
+                <li class="feature-card">
+                    <span class="feature-card__icon">✦</span>
+                    <div>
+                        <h3 class="feature-card__title">Doodle Dashboard</h3>
+                        <p class="feature-card__desc">A creative space where users can freely draw and express
+                            themselves as part of their personal daily experience.</p>
+                    </div>
+                </li>
+                <li class="feature-card">
+                    <span class="feature-card__icon">✦</span>
+                    <div>
+                        <h3 class="feature-card__title">Memories</h3>
+                        <p class="feature-card__desc">Users can post Instagram-style updates that are only visible to
+                            their selected circle of friends.</p>
+                    </div>
+                </li>
+                <li class="feature-card">
+                    <span class="feature-card__icon">✦</span>
+                    <div>
+                        <h3 class="feature-card__title">Messaging</h3>
+                        <p class="feature-card__desc">Built-in chat allows users to stay connected and communicate
+                            easily with their close friends.</p>
+                    </div>
+                </li>
+                <li class="feature-card">
+                    <span class="feature-card__icon">✦</span>
+                    <div>
+                        <h3 class="feature-card__title">Pomodoro Timer (Premium)</h3>
+                        <p class="feature-card__desc">A customizable focus timer designed to improve productivity with
+                            personalized and aesthetic backgrounds..</p>
+                    </div>
+                </li>
+
+            </ul>
+        </section>
+
+        <!-- ═══════════════════ DATABASE / ERD ═══════════════════ -->
+        <section class="section erd-section" id="database">
+            <h2 class="section__title">Database Design</h2>
+
+            <div class="erd-section__explanation">
+                <p>
+                    Describe your database here — what technology you used (e.g. Core Data, SQLite,
+                    Firebase, PostgreSQL), why you chose it, and any key design decisions.
+                    Explain the main entities and how they relate to each other so the reader
+                    understands the data model before they look at the diagram.
+                </p>
             </div>
 
-            <div class="carousel__slide">
-              <img src="assets/images/screenshot-2.png" alt="Screenshot 2" />
-            </div>
-
-            <div class="carousel__slide">
-              <img src="assets/images/screenshot-3.png" alt="Screenshot 3" />
-            </div>
-
-            <div class="carousel__slide">
-              <!-- Example video slide -->
-              <video controls preload="none" poster="assets/images/video-poster.png">
-                <source src="assets/videos/demo.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-
-          </div><!-- /.carousel__track -->
-
-          <button class="carousel__btn carousel__btn--prev" id="prevBtn" aria-label="Previous slide">&#8592;</button>
-          <button class="carousel__btn carousel__btn--next" id="nextBtn" aria-label="Next slide">&#8594;</button>
-
-          <div class="carousel__dots" id="carouselDots"></div>
-
-        </div>
-      </section>
-
-      <!-- ═══════════════════ APP DESCRIPTION ═══════════════════ -->
-      <section class="section" id="about">
-        <h2 class="section__title">About the App</h2>
-        <div class="about__content">
-          <p>
-            Replace this paragraph with a clear, concise description of what your app does,
-            who it is for, and the problem it solves. Keep it friendly and to the point —
-            two or three sentences is usually enough for visitors to understand the core idea.
-          </p>
-          <p>
-            You can add a second paragraph here if you want to go into a bit more detail about
-            the motivation behind the project or what makes it unique.
-          </p>
-        </div>
-      </section>
-
-      <!-- ═══════════════════ FEATURES ═══════════════════ -->
-      <section class="section features-section" id="features">
-        <h2 class="section__title">Features</h2>
-        <ul class="features__list">
-          <li class="feature-card">
-            <span class="feature-card__icon">✦</span>
-            <div>
-              <h3 class="feature-card__title">Feature One</h3>
-              <p class="feature-card__desc">Short description of this feature and the value it provides.</p>
-            </div>
-          </li>
-          <li class="feature-card">
-            <span class="feature-card__icon">✦</span>
-            <div>
-              <h3 class="feature-card__title">Feature Two</h3>
-              <p class="feature-card__desc">Short description of this feature and the value it provides.</p>
-            </div>
-          </li>
-          <li class="feature-card">
-            <span class="feature-card__icon">✦</span>
-            <div>
-              <h3 class="feature-card__title">Feature Three</h3>
-              <p class="feature-card__desc">Short description of this feature and the value it provides.</p>
-            </div>
-          </li>
-          <li class="feature-card">
-            <span class="feature-card__icon">✦</span>
-            <div>
-              <h3 class="feature-card__title">Feature Four</h3>
-              <p class="feature-card__desc">Short description of this feature and the value it provides.</p>
-            </div>
-          </li>
-        </ul>
-      </section>
-
-      <!-- ═══════════════════ DATABASE / ERD ═══════════════════ -->
-      <section class="section erd-section" id="database">
-        <h2 class="section__title">Database Design</h2>
-
-        <div class="erd-section__explanation">
-          <p>
-            Describe your database here — what technology you used (e.g. Core Data, SQLite,
-            Firebase, PostgreSQL), why you chose it, and any key design decisions.
-            Explain the main entities and how they relate to each other so the reader
-            understands the data model before they look at the diagram.
-          </p>
-        </div>
-
-        <div class="erd-section__diagram">
-          <!-- Replace the img src with your exported ERD diagram -->
-          <img
-            src="assets/images/erd.png"
-            alt="Entity Relationship Diagram"
-            class="erd-section__img"
-          />
-          <!-- If you don't have a diagram image yet, you can embed an SVG or use a tool
+            <div class="erd-section__diagram">
+                <!-- Replace the img src with your exported ERD diagram -->
+                <img src="assets/images/db.png" alt="Entity Relationship Diagram" class="erd-section__img" />
+                <!-- If you don't have a diagram image yet, you can embed an SVG or use a tool
                like dbdiagram.io and paste the exported PNG here. -->
-        </div>
+            </div>
 
-      </section>
+        </section>
+
+        <img src="assets/images/betweenUs_allAvatars.png" alt="Decorative divider" class="divider" />
+
 
     </main>
 
     <!-- ═══════════════════ FOOTER ═══════════════════ -->
     <footer class="footer">
-      <p>&copy; 2026 PetalByte &mdash; Built with &#9825;</p>
+        <p>&copy; 2026 BetweenUs &mdash; Built with &#9825;</p>
     </footer>
 
     <script src="js/main.js"></script>
-  </body>
+</body>
+
 </html>
