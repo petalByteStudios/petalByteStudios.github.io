@@ -69,10 +69,13 @@
   let touchStartX = 0;
   let isDragging  = false;
   let dragOffset  = 0;
+  let wasSwipe    = false;
 
   track.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
     isDragging  = true;
+    dragOffset  = 0;
+    wasSwipe    = false;
     track.style.transition = 'none';
   }, { passive: true });
 
@@ -80,6 +83,12 @@
     if (!isDragging) return;
     const currentX = e.touches[0].clientX;
     dragOffset = currentX - touchStartX;
+    
+    // Mark as swipe if movement exceeds threshold
+    if (Math.abs(dragOffset) > 10) {
+      wasSwipe = true;
+    }
+    
     const newTranslate = -current * 100 + (dragOffset / track.offsetWidth) * 100;
     track.style.transform = `translateX(${newTranslate}%)`;
   }, { passive: true });
@@ -132,7 +141,13 @@
 
     if (img) {
       img.style.cursor = 'zoom-in';
-      img.addEventListener('click', () => openLightbox(img));
+      img.addEventListener('click', () => {
+        // Only open lightbox if no recent swipe
+        if (!wasSwipe) {
+          openLightbox(img);
+        }
+        wasSwipe = false;
+      });
     }
 
     if (video) {

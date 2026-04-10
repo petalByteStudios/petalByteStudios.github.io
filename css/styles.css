@@ -191,6 +191,7 @@ main>section+section {
     max-height: 520px;
     width: 100%;
     object-fit: contain;
+    touch-action: manipulation;
 }
 
 /* Navigation buttons */
