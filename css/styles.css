@@ -103,7 +103,7 @@ main>section+section {
     letter-spacing: -0.04em;
     font-family: 'Chewy', serif;
     background: #3290c8;
-  
+
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 16px;
@@ -175,6 +175,7 @@ main>section+section {
     min-width: 100%;
     flex: 0 0 100%;
     max-width: 100%;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -378,7 +379,7 @@ main>section+section {
 }
 
 .release-note {
-        max-width: 760px;
+    max-width: 760px;
     margin: 16px auto 0;
     font-size: 25px;
     font-family: 'chewy', sans-serif;
@@ -436,14 +437,89 @@ main>section+section {
 
 
 /* ══════════════════════════════════════════════
+   LIGHTBOX
+══════════════════════════════════════════════ */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.lightbox--open {
+    display: flex;
+}
+
+.lightbox__close {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.6rem;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    z-index: 1001;
+}
+
+.lightbox__close:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.lightbox__content img {
+    max-width: min(92vw, 1200px);
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    border-radius: var(--radius-sm);
+    object-fit: contain;
+    display: block;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* ── Video expand button overlay ──────────────── */
+.carousel__expand-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: var(--radius-sm);
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 5px 9px;
+    cursor: pointer;
+    line-height: 1;
+    transition: background 0.2s;
+}
+
+.carousel__expand-btn:hover {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+/* ══════════════════════════════════════════════
    FOOTER
 ══════════════════════════════════════════════ */
 
 .divider {
-    margin: 40px auto;
+    margin: 20px auto;
     display: block;
-    max-width: 100%;
+    max-width: 90%;
+    width: 30rem;
 }
+
 .footer {
     text-align: center;
     padding: 32px 24px;
