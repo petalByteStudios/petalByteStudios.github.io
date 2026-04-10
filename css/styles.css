@@ -461,7 +461,7 @@ main>section+section {
     position: fixed;
     top: 20px;
     right: 24px;
-    background: rgba(255, 255, 255, 0.15);
+    background: #3290c8;
     border: none;
     border-radius: 50%;
     color: #fff;
@@ -477,7 +477,7 @@ main>section+section {
 }
 
 .lightbox__close:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(74, 132, 203, 0.918);
 }
 
 .lightbox__content img {
