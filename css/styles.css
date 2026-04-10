@@ -163,12 +163,14 @@ main>section+section {
     border-radius: var(--radius-lg);
     background: var(--clr-surface);
     box-shadow: var(--shadow-soft);
+    touch-action: pan-x;
 }
 
 .carousel__track {
     display: flex;
     transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
+    touch-action: pan-x;
 }
 
 .carousel__slide {

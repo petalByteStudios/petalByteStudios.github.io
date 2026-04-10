@@ -68,6 +68,7 @@
   // ── Touch / swipe — live finger-follow ───────────
   let touchStartX = 0;
   let isDragging  = false;
+  let dragOffset  = 0;
 
   track.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
@@ -77,20 +78,23 @@
 
   track.addEventListener('touchmove', (e) => {
     if (!isDragging) return;
-    const drag = e.touches[0].clientX - touchStartX;
-    track.style.transform = `translateX(calc(-${current * 100}% + ${drag}px))`;
+    const currentX = e.touches[0].clientX;
+    dragOffset = currentX - touchStartX;
+    const newTranslate = -current * 100 + (dragOffset / track.offsetWidth) * 100;
+    track.style.transform = `translateX(${newTranslate}%)`;
   }, { passive: true });
 
   track.addEventListener('touchend', (e) => {
     if (!isDragging) return;
     isDragging = false;
-    track.style.transition = '';
-    const delta = touchStartX - e.changedTouches[0].clientX;
-    if (Math.abs(delta) > 40) {
-      goTo(delta > 0 ? current + 1 : current - 1);
+    
+    const threshold = track.offsetWidth * 0.2; // 20% of track width
+    
+    if (Math.abs(dragOffset) > threshold) {
+      goTo(dragOffset > 0 ? current - 1 : current + 1);
     } else {
-      // snap back to current without navigating
-      track.style.transform = `translateX(-${current * 100}%)`;
+      track.style.transition = '';
+      goTo(current);
     }
   }, { passive: true });
 
