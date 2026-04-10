@@ -173,11 +173,14 @@ main>section+section {
 
 .carousel__slide {
     min-width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #eef9ff;
     min-height: 360px;
+    overflow: hidden;
 }
 
 .carousel__slide img,

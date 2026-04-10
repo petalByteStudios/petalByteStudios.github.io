@@ -13,6 +13,25 @@
   const slides = Array.from(track.querySelectorAll('.carousel__slide'));
   let current = 0;
 
+  function syncVideoPlayback() {
+    slides.forEach((slide, i) => {
+      const video = slide.querySelector('video');
+      if (!video) return;
+
+      if (i === current) {
+        const playAttempt = video.play();
+        if (playAttempt && typeof playAttempt.catch === 'function') {
+          playAttempt.catch(() => {
+            // Ignore autoplay rejections; user can still tap play.
+          });
+        }
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  }
+
   // ── Build dot indicators ────────────────────────
   slides.forEach((_, i) => {
     const dot = document.createElement('button');
@@ -27,16 +46,14 @@
 
   // ── Core navigation ─────────────────────────────
   function goTo(index) {
-    // Pause any playing video on the outgoing slide
-    const outgoingVideo = slides[current].querySelector('video');
-    if (outgoingVideo) outgoingVideo.pause();
-
     current = (index + slides.length) % slides.length;
     track.style.transform = `translateX(-${current * 100}%)`;
 
     dots().forEach((d, i) => {
       d.classList.toggle('carousel__dot--active', i === current);
     });
+
+    syncVideoPlayback();
   }
 
   prevBtn.addEventListener('click', () => goTo(current - 1));
@@ -61,5 +78,7 @@
       goTo(delta > 0 ? current + 1 : current - 1);
     }
   }, { passive: true });
+
+  syncVideoPlayback();
 
 })();
