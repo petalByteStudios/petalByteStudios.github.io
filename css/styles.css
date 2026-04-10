@@ -91,7 +91,7 @@ main>section+section {
 .hero__logo {
     height: 12rem;
     width: auto;
-    justify-self: center;
+    margin-inline: auto;
     border-radius: 50px;
     margin-bottom: 16px;
     box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.1);
